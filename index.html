@@ -1,0 +1,56 @@
+<!-- esto es un comentario -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> <!-- Para poner todo tipo de asentos-->
+	<title>Mi primera aplicación móvil</title>
+	<!-- Importacion de librerias -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"> <!-- librerias css -->
+	<link rel="stylesheet" type="text/css" href="css/mystilo.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function (){  //Funcion por defecto
+			$("#btnfact").click(function(){
+				var n1=parseInt($("#num1").val());
+				var total = 1; 
+				var val=0;
+					for (i=1; i<=n1; i++) {
+						total = total * i; 
+						val= val+","+ total;
+						$("#resulfact").val(val);
+					}
+			});
+		}); //Cuando se ejecuta todo el documento
+	</script>
+</head>
+<body>
+	<div data-role ="page" id="Principal">
+		<div data-role="header">
+			<p>PRINCIPAL</p> 
+		</div>
+		<div data-role="content">
+			<p>Contenido de la aplicación</p>
+			<a href="#Contacto" data-role="button" data-transition="slideup">Calcular Factorial</a>
+		</div>
+		<div data-role ="footer">
+			<p>Pie de la palicación</p>
+		</div>
+	</div>
+
+	<div data-role ="page" id="Contacto">
+		<div data-role="header">
+			<p>FACTORIAL DE UN NUMERO</p>
+		</div>
+		<div data-role="content">
+			<input type="number" id="num1" placeholder="Escribe numero para el factorial">
+			<input type="button" id="btnfact" value="Calcular Factorial">
+			<input type="text" id="resulfact">
+		</div>
+		<div data-role ="footer">
+			<p>Pie de la palicación</p>
+		</div>
+	</div>
+</body>
+</html>
